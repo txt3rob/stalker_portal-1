@@ -8,7 +8,7 @@
 
     <target name="build" description="Build task">
 
-        <exec command="apt-get -y install php-soap php5-intl php-gettext php5-memcache php5-curl php5-mysql php5-mcrypt php5-tidy php5-imagick php5-geoip curl npm "
+        <exec command="apt-get -y install php-soap php-intl php-gettext php-memcache php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm "
               level="info" outputProperty="install.error.msg" returnProperty="install.error.code"/>
 
         <if>
@@ -229,7 +229,7 @@
                             </then>
                             <else>
                                 <if>
-                                    <available file="/etc/php5/conf.d" property="extension_ini_path" type="dir" />
+                                    <available file="/etc/php//conf.d" property="extension_ini_path" type="dir" />
                                     <then>
                                         <touch file="/etc/php5/conf.d/00-ioncube.ini" />
                                         <chmod file="/etc/php5/conf.d/00-ioncube.ini" mode="0644" />
